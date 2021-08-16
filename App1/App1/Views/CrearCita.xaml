@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.CrearCita">
+
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="#3b62d8"></BoxView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="0,30,0,0">
+                    <Label Text="Crear Cita" FontSize="70" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Padding="10, 20">
+                    <Picker x:Name="pacientePicker" TextColor="White" SelectedItem="{Binding NombrePaciente}" Title="Seleccione un paciente" TitleColor="white"></Picker>
+                    <Picker x:Name="serviciosPicker" TextColor="White" SelectedItem="{Binding ServicioMedico}" Title="Seleccione el servicio" TitleColor="white"></Picker>
+                    <DatePicker TextColor="White" MinimumDate="01/01/1950" MaximumDate="12/31/2025" Date="{Binding Fecha}" x:Name="fecha"></DatePicker>
+                    <TimePicker TextColor="White" Time="{Binding Hora}"  x:Name="timerCita"/>
+                    <Button Clicked="Registrar" Text="Guardar cita" BackgroundColor="#547bf2" BorderRadius="20" TextColor="white" Margin="0,20,0,0"></Button>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
